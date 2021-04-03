@@ -9,7 +9,8 @@ def speak(str):
 
 
 if __name__ == '__main__':
-    news = requests.get("https://newsapi.org/v2/top-headlines?country=in&apiKey=b24ad1abb76f4932b3f75e87ce208487")
+    key = "your newsapi key here"
+    news = requests.get(f"https://newsapi.org/v2/top-headlines?country=in&apiKey={key}")
     news_converted = json.loads(news.text)
     speak("Hello, and welcome to News Teller.")
     play = input("Press enter to listen to today's headlines: ")
